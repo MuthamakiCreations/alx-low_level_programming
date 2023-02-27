@@ -1,22 +1,41 @@
 #include "main.h"
 
 /**
- * *_strcpy -  copies the string pointed to by src
- * @dest: char type string
- * @src: char type string
- * Description: Copy the string pointed to by pointer `src` to
- * the buffer pointed to by `dest`
- * Return: Pointer to `dest`
+ * _atoi - converts the first set of digits in a string to an integer,
+ * taking into account the sign of the number
+ * @s: string to be converted
+ * Return: int containing the converted number
  */
-
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int i = -1;
+	int index, ind2;
+	unsigned int res;
+	int sign = 1;
+	char now;
 
-	do {
-		i++;
-		dest[i] = src[i];
-	} while (src[i] != '\0');
+	index = 0;
+	res = 0;
+	while (*(s + index) != '\0')
+	{
+		now = *(s + index);
+		if (now == '-')
+		{
+			sign *= -1;
+		}
+		if (now >= '0' && now <= '9')
+		{
+			ind2 = index;
+			while (*(s + ind2) > 47 && *(s + ind2) < 58)
+			{
+				res = (res * 10) + *(s + ind2) - '0';
+				ind2++;
+			}
+			break;
+		}
+		index++;
+	}
+	if (sign < 0)
+		res *= sign;
+	return (res);
 
-	return (dest);
 }
