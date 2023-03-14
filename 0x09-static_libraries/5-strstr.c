@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-char *_strchr(char *s, char c)
+char *_strstr(char *haystack, char *needle)
 {
-    return strchr(s, c);
+    return strstr(haystack, needle);
 }

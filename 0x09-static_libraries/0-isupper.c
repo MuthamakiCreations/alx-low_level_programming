@@ -1,16 +1,10 @@
 #include "main.h"
-
-/**
- * _isupper - check the code for Holberton School students.
- *
- * @c: is an integer param
- *
- * Return: Always 0.
- */
-
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 
 int _isupper(int c)
 {
-
-	return (c >= 65 && c <= 90);
+    return (c >= 'A' && c <= 'Z');
 }

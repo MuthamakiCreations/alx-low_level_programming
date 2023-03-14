@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-char *_strchr(char *s, char c)
+int _isalpha(int c)
 {
-    return strchr(s, c);
+    return isalpha(c);
 }

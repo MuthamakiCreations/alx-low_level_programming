@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <string.h>
 
-char *_strchr(char *s, char c)
+int _abs(int n)
 {
-    return strchr(s, c);
+    return abs(n);
 }
