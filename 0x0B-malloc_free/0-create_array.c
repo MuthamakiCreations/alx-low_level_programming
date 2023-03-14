@@ -1,51 +1,40 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
+ *create_array - array for prints a string
+ *@size: number elements array
+ *@c: char
+ *Return: pointer
  */
-void simple_print_buffer(char *buffer, unsigned int size)
+
+char *create_array(unsigned int size, char c)
 {
-    unsigned int i;
+	char *buffer;
+	unsigned int position;
 
-    i = 0;
-    while (i < size)
-    {
-        if (i % 10)
-        {
-            printf(" ");
-        }
-        if (!(i % 10) && i)
-        {
-            printf("\n");
-        }
-        printf("0x%02x", buffer[i]);
-        i++;
-    }
-    printf("\n");
-}
+	if (size == 0)
+	{
+		return (NULL);
+	}
 
-/**
- * main - check the code for ALX School students.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-    char *buffer;
+	/*Define values with malloc*/
+	buffer = (char *) malloc(size * sizeof(c));
 
-    buffer = create_array(98, 'H');
-    if  (buffer == NULL)
-    {
-        printf("failed to allocate memory\n");
-        return (1);
-    }
-    simple_print_buffer(buffer, 98);
-    free(buffer);
-    return (0);
+	if (buffer == 0)
+	{
+		return (NULL);
+	}
+
+	else
+	{
+		position = 0;
+		while (position < size) /*While for array*/
+		{
+			*(buffer + position) = c;
+			position++;
+		}
+
+		return (buffer);
+	}
+
 }
