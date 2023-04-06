@@ -10,18 +10,18 @@
 
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int diff;
-	int counter;
+	unsigned long int int_c;
+	int int_d;
 
-	diff = n ^ m;
-	counter = 0;
+	int_c = n ^ m;
+	int_d = 0;
 
-	while (diff)
+	while (int_c)
 	{
-		counter++;
-		diff &= (diff - 1);
+		int_d++;
+		int_c &= (int_d - 1);
 	}
 
-	return (counter);
+	return (int_d);
 }
 
