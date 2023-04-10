@@ -8,8 +8,8 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int int1
-	int int2;
+	unsigned long int temp;
+	int shifts;
 
 	if (n == 0)
 	{
@@ -17,12 +17,12 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	for (int1 = n, int2 = 0; (int1 >>= 1) > 0; int2++)
+	for (temp = n, shifts = 0; (temp >>= 1) > 0; shifts++)
 		;
 
-	for (; int2 >= 0; int2--)
+	for (; shifts >= 0; shifts--)
 	{
-		if ((n >> int2) & 1)
+		if ((n >> shifts) & 1)
 			printf("1");
 		else
 			printf("0");
