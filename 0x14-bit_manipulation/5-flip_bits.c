@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- * flip_bits -  a function that returns the number of bits you would need to flip to get from one number to another.
+ * flip_bits -  no of bits to flip to get from one number to another
  * @int1: first number
  * @int2: second number to convert to
  * Return: number of bits that is needed to flip
