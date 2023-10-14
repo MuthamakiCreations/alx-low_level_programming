@@ -1,10 +1,10 @@
 #include "search_algos.h"
 /**
  * interpolation_search - searches for a value in a sorted array
- * @array: pointer to 1st element of the array
- * @size: No. of elements in the array
- * @value: value to be searched
- * Return: Location of value in 1st index where value 
+ * @array: pointer to the first element of the array
+ * @size: the number of elements in an array
+ * @value: the value to search for
+ * Return: first index where value is located
  */
 int interpolation_search(int *array, size_t size, int value)
 {
@@ -12,9 +12,9 @@ int interpolation_search(int *array, size_t size, int value)
 
 	if (array == NULL)
 		return (-1);
-	/*1st and last elements of the array to be initialized*/
+	/*initialize first and last elements of the array*/
 	for (l = 0, h = size - 1; h >= l;)
-	{/*interpolation formula that calculates estimated position*/
+	{/*interpolation formula to calculate the estimated position*/
 		pos = l + (((double)(h - l) / (array[h] - array[l])) * (value - array[l]));
 		if (pos < size)/*value within range*/
 			printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
@@ -31,6 +31,3 @@ int interpolation_search(int *array, size_t size, int value)
 		else
 			l = pos + 1;
 	}
-
-	return (-1);
-}
