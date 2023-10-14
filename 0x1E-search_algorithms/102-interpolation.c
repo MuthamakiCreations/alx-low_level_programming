@@ -31,3 +31,6 @@ int interpolation_search(int *array, size_t size, int value)
 		else
 			l = pos + 1;
 	}
+
+	return (-1);
+}
